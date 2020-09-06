@@ -49,12 +49,12 @@ module testbench();
        A1 = 1;
       #1 reset1 = 1;
       #1 reset1 = 0;
-      #8 A1 = 0;
-      #8 A1 = 1;
+      #14 A1 = 0;
+      #14 A1 = 1;
      end
 
      initial
-      #35 $finish;
+      #60 $finish;
 
   initial begin
         $dumpfile("MSF1_tb.vcd");

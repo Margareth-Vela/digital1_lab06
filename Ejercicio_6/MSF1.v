@@ -28,7 +28,7 @@ module FSM_Moore(input wire A, input wire clock, reset, output wire S0, S1, S2, 
 
     assign S0F = ~S00; //Determinar valores  para estados
     assign S1F = (~S11 & ~S00 & ~A) | (S11 & S0 & ~A) | (S11 & ~S00 & A) | (~S11 & S00 & A);
-    assign S2F = (S22 & S11 & ~A) | (S22 & ~S00 & A) | (S22 & ~S11 & ~S00) | (~S22 & S11 & S00 & A);
+    assign S2F = (S22 & S11 & ~A) | (S22 & ~S00 & A) | (S22 & ~S11 & S00) | (~S22 & S11 & S00 & A);
 
     ff_D G1(clock, reset, S0F, S00);//Flip flop tipo d para obtener los siguientes estados
     ff_D G2(clock, reset, S1F, S11);
